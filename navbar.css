@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+.nav {
+  height: 70px;
+  width: 100%;
+  position: sticky;
+  font-family: 'Montserrat', sans-serif;
+  background-color: rgba(0, 0, 0,0.5);
+  margin-top: -10px;
+  z-index: 1000;
+  font-weight: 900;
+}
+
+.nav > .nav-header {
+  display: inline;
+}
+
+.nav > .nav-header > .nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 15px 15px 15px 15px;
+}
+
+.nav > .nav-btn {
+  display: none;
+}
+
+.nav > .nav-links {
+  display: inline;
+  float: right;
+  font-size: 1.15em;
+  padding-top: 0.5%;
+}
+
+.nav > .nav-links > a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #ffffff;
+}
+
+.nav > .nav-links > a:hover {
+  /* background-color: rgba(255, 93, 93, 0.2); */
+  box-shadow: 0 10px 25px rgba(245, 103, 233, 0.5);
+  transition: linear;
+}
+
+.nav > #nav-check {
+  display: none;
+}
+
+@media (max-width:800px) {
+   
+    .nav{
+        background-color: rgba(0, 0, 0,0.95);
+        z-index: 999;
+    }
+  .nav > .nav-btn {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .nav > .nav-btn > label {
+    display: inline-block;
+    width: 70px;
+    height: 70px;
+    padding: 13px;
+  }
+  .nav > .nav-btn > label:hover,.nav  #nav-check:checked ~ .nav-btn > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .nav > .nav-btn > label > span {
+    display: block;
+    width: 25px;
+    height: 10px;
+    border-top: 2px solid #eee;
+  }
+  .nav > .nav-links {
+    position: absolute;
+    display: block;
+    width: 100%;
+    background-color: inherit;
+    /* color: black; */
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    left: 0px;
+  }
+  .nav > .nav-links > a {
+    display: block;
+    width: 100%;
+  }
+  .nav > #nav-check:not(:checked) ~ .nav-links {
+    height: 0px;
+  }
+  .nav > #nav-check:checked ~ .nav-links {
+    height: 100vh ;
+    overflow-y: auto;
+    padding-top: 20px;
+  }
+}
+
+
+
+.hidden {
+  opacity:0;
+}
